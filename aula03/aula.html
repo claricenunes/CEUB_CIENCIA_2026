@@ -5,166 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 16px;
-            background-color: #eef1f5;
-            color: #333;
-            min-height: 100vh;
-        }
-
-        h1 {
-            background-color: #2f4061;
-            color: aliceblue;
-            text-align: center;
-            padding: 30px 20px;
-            font-size: 22px;
-            letter-spacing: 1px;
-        }
-
-        h2 {
-          text-align: center;
-          color: rgb(102, 102, 102);
-          margin: 40px 0 30px;
-          font-size: 22px;
-          letter-spacing: 1px;
-        }
-
-        form {
-          width: 90%;
-          max-width: 960px;
-          margin: 0 auto 60px auto;
-          background-color: #fff;
-          padding: 50px 60px;
-          border-radius: 10px;
-          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
-        }
-
-        fieldset {
-          border: 2px solid #1a2f45;
-          border-radius: 8px;
-          padding: 30px 35px;
-          margin-bottom: 35px;
-        }
-
-        legend {
-          background-color: #1a2f45;
-          color: #fff;
-          padding: 7px 18px;
-          border-radius: 5px;
-          font-size: 15px;
-          letter-spacing: 1px;
-        }
-
-        .campo-grupo {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 20px 40px;
-          margin-bottom: 20px;
-        }
-
-        .campo{
-          display: flex;
-          flex-direction: column;
-          margin-bottom: 20px;
-        }
-
-        label {
-          display: inline-block;
-          margin-bottom: 8px;
-          font-weight: bold;
-          color: #1a2f45;
-          font-size: 14px;
-          text-transform: uppercase;
-          letter-spacing: 0.5px;
-        }
-
-        input [type='text'],
-        input [type='date'],
-        input [type='email']{
-          padding: 10px 14px;
-          border: 1px solid #ccc;
-          border-radius: 5px;
-          font-size: 15px;
-          background-color: #fafafa;
-          transition: border-color 0.3s, box-shadow 0.3s;
-        }
-
-        .campo input [type='text'],
-        .campo input [type='date'],
-        .campo input [type='email']{
-          width: 100%;
-        }
-        input [type='text']:focus{
-          border-color: #1a2f45;
-          box-shadow: 0 0 0 3px rgba(26,47,69,0.1);
-          outline: none;
-          background-color: #fff;
-        }
-        select{
-          padding: 10px 14px;
-          border: 1px solid #ccc;
-          border-radius: 5px;
-          font-size: 15px;
-          background-color: #fafafa;
-          cursor: pointer;
-          width: 100%;
-          transition: border-color 0.3s;
-        }
-        select:focus{
-          border: #1a2f45;
-          outline: none;
-        }
-        table{
-          width: 100%;
-          border-collapse: separate;
-          border-spacing: 0;
-        }
-        td{
-          padding: 15px 20px;
-          vertical-align: top;
-          border-right: 1px solid #e0e0e0;
-        }
-
-        td:last-child{
-          border-right: none;
-        }
-
-        td > b, td > strong{
-          display: block;
-          font-size: 14px;
-          text-transform: uppercase;
-          letter-spacing: 0.5px;
-          color: #1a2f45;
-          margin-bottom: 12px;
-        }
-
-        input [type='radio'],
-        input [type='checkbox']{
-          margin-right: 8px;
-          cursor: pointer;
-          accent-color: #1a2f45;
-          width : 15px;
-          height: 15px;
-        }
-
-        td label{
-          text-transform: none;
-          letter-spacing: 0;
-          font-weight: normal;
-          font-size: 15px;
-          display: inline;
-          margin-bottom: 0;
-        }
-
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    
 </head>
 <body>
 
@@ -206,6 +48,59 @@
           <div class="campo">
             <label for="telefone">Telefone</label>
             <input type="text" id="telefone" name="telefone" maxlength="15" placeholder="(61) 9 9999-9999">
+          </div>
+        </div>
+
+        <div class="campo-grupo">
+          <div class="campo">
+            <label for="cpf">CPF</label>
+            <input type="text" id="cpf" name="cpf" maxlength="11" placeholder="000.000.000-00">
+          </div>
+          <div class="campo">
+            <label for="cep">CEP</label>
+            <input type="text" id="cep" name="cep" maxlength="8" placeholder="00000-000">
+          </div>
+        </div>
+  
+      </fieldset>
+
+      <fieldset>
+        <legend><strong>Endereço</strong></legend>
+  
+        <div class="campo-grupo">
+          <div class="campo">
+            <label for="locadouro">Locadouro</label>
+            <input type="text" id="locadouro" name="locadouro" required>
+          </div>
+          <div class="campo">
+            <label for="numero">Número</label>
+            <input type="text" id="numero" name="numero" maxlength="3" placeholder="Ex: 123">
+          </div>
+        </div>
+  
+        <div class="campo-grupo">
+          <div class="campo">
+            <label for="complemento">Complemento</label>
+            <input type="text" id="complemento" name="complemento" maxlength="20" placeholder="Bloco, Apto, ...">
+          </div>
+          <div class="campo">
+            <label for="bairro">Bairro</label>
+            <input type="text" id="bairro" name="bairro">
+          </div>
+        </div>
+  
+        <div class="campo-min">
+          <div class="campo">
+            <label for="cidade">Cidade</label>
+            <input type="text" id="cidade" name="cidade">
+          </div>
+          <div class="campo">
+            <label for="estado">Estado</label>
+            <input type="text" id="estado" name="estado">
+          </div>
+          <div class="campo">
+            <label for="codigo-ibge">Código IBGE</label>
+            <input type="text" id="codigo-ibge" name="codigo-ibge">
           </div>
         </div>
   
