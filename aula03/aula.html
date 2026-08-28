@@ -121,6 +121,17 @@
                 <option value="4ano">4º ano</option>
                 <option value="5ano">5º ano</option>
               </select>
+
+              
+              <div class="segundaLingua">
+                    <strong>Segunda Língua</strong>
+                      <input type="radio" value="ingles">
+                        <label for="ingles">Inglês</label>
+                      <input type="radio" value="espanhol">
+                        <label for="espanhol">Espanhol</label>
+              </div>
+            
+              
             </td>
   
             <td>
@@ -163,4 +174,25 @@
     </form>
   
   </body>
+
+  <script>
+    const campoCep = document.getElementById('cep');
+    campoCep.addEventListener('input', function(){
+      let valor = this.value.replace(/\D/g,``);
+      if(valor.length > 10 ){
+        valor = valor.slice(0,10) +'-'+valor.slice(9,10);
+      }
+      this.value = valor;
+    })
+
+    const campoCpf = document.getElementById('cpf');
+    campoCpf.addEventListener('input', function(){
+      let valor = this.value.replace(/\D/g,``);
+      if(valor.length > 3 ){
+        valor = valor.slice(0,3) +'-'+valor.slice(3,11);
+      }
+      this.value = valor;
+    })
+  </script>
+
 </html>

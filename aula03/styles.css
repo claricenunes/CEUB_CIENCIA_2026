@@ -68,6 +68,15 @@ legend {
   letter-spacing: 1px;
 }
 
+.segundaLingua {
+    border: 3px dotted #1a2f45;
+    background-color: #f2f9ff;
+    margin-top: 10%;
+    padding: 30px 35px;
+    border-radius: 8px;
+    
+}
+
 /* =============================================
    GRID DE CAMPOS - Duas colunas
 ============================================= */
@@ -219,6 +228,9 @@ input[type="checkbox"] {
   width: 15px;
   height: 15px;
 }
+
+
+
 
 /* Labels de radio e checkbox sem uppercase */
 td label {
