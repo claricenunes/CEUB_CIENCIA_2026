@@ -62,6 +62,27 @@
           </div>
         </div>
   
+        <div class="campo-grupo">
+          <div class="campo">
+            <label for="estado">Estado</label>
+            <input type="text" id="estado" name="estado" maxlength="11" placeholder="DF">
+          </div>
+          <div class="campo">
+            <label for="cidade">Cidade</label>
+            <input type="text" id="cidade" name="cidade" maxlength="8" placeholder="Brasília">
+          </div>
+        </div>
+
+        <div class="campo-grupo">
+          <div class="campo">
+            <label for="matricula">Matrícula</label>
+            <input type="text" id="matricula" name="matricula" maxlength="11" placeholder="000.000.000.00">
+          </div>
+          <div class="campo">
+            <label for="idade">Idade</label>
+            <input type="text" id="idade" name="idade" maxlength="8" placeholder="45 anos" readonly>
+          </div>
+        </div>
       </fieldset>
 
       <fieldset>
@@ -104,6 +125,17 @@
           </div>
         </div>
   
+
+        <strong>Série</strong>
+              <select id="serie" name="serie">
+                <option value="pre-escolar">Pré-escolar</option>
+                <option value="1ano">1º ano</option>
+                <option value="2ano">2º ano</option>
+                <option value="3ano">3º ano</option>
+                <option value="4ano">4º ano</option>
+                <option value="5ano">5º ano</option>
+              </select>
+
       </fieldset>
   
       <fieldset>
@@ -193,6 +225,28 @@
       }
       this.value = valor;
     })
+
+    const nascimento = document.getElementById('nascimento');
+    const idade = document.getElementById('idade');
+
+    nascimento.addEventListener("input", function () {
+      const dataNascimento = new Date(this.value)
+      const hoje = new Date ();
+
+      let anos = hoje.getFullYear() - dataNascimento.getFullYear();
+
+      if (
+        hoje.getMonth < dataNascimento.getMonth ||
+        
+        (
+          hoje.getMonth === dataNascimento.getMonth() &&
+          hoje.getDate < dataNascimento.getDate()
+        )
+      ) {
+        anos--;
+      }
+      idade.value = anos + " anos";
+    });
   </script>
 
 </html>
