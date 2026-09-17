@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inscrição / Contato</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  body {
+    background-color: #f4f6f9;
+    padding: 2rem 0;
+  }
+  .form-card {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 0.5rem;
+    padding: 2rem 2.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+  .form-card h2 {
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+  }
+  .form-card .subtitle {
+    color: #6c757d;
+    margin-bottom: 1.5rem;
+  }
+  label.required::after {
+    content: " *";
+    color: #dc3545;
+  }
+</style>
+</head>
+<body>
+
+<div class="form-card">
+  <h2>Inscrição / Contato</h2>
+  <p class="subtitle">Preencha os campos abaixo. Campos marcados com <span class="text-danger">*</span> são obrigatórios.</p>
+
+  <form novalidate>
+    <div class="row g-3">
+
+      <div class="col-md-6">
+        <label for="nome" class="form-label required">Nome</label>
+        <input type="text" class="form-control" id="nome" placeholder="João" required>
+      </div>
+
+      <div class="col-md-6">
+        <label for="sobrenome" class="form-label required">Sobrenome</label>
+        <input type="text" class="form-control" id="sobrenome" placeholder="Silva" required>
+      </div>
+
+      <div class="col-md-6">
+        <label for="email" class="form-label required">Email</label>
+        <input type="email" class="form-control" id="email" placeholder="nome@exemplo.com" required>
+      </div>
+
+      <div class="col-md-6">
+        <label for="telefone" class="form-label">Telefone</label>
+        <input type="tel" class="form-control" id="telefone" placeholder="(11) 91234-5678">
+      </div>
+
+      <div class="col-md-6">
+        <label for="cpf" class="form-label required">CPF</label>
+        <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00" required>
+      </div>
+
+      <div class="col-md-6">
+        <label for="nascimento" class="form-label">Data de nascimento</label>
+        <input type="date" class="form-control" id="nascimento">
+      </div>
+
+      <div class="col-md-6">
+        <label for="senha" class="form-label required">Senha</label>
+        <input type="password" class="form-control" id="senha" placeholder="Mínimo 6 caracteres" minlength="6" required>
+      </div>
+
+      <div class="col-md-6">
+        <label for="funcao" class="form-label">Função</label>
+        <select class="form-select" id="funcao">
+          <option selected value="">Escolha...</option>
+          <option value="aluno">Aluno</option>
+          <option value="professor">Professor</option>
+          <option value="visitante">Visitante</option>
+        </select>
+      </div>
+
+      <div class="col-12">
+        <label for="usuario" class="form-label">Usuário</label>
+        <div class="input-group">
+          <span class="input-group-text">@</span>
+          <input type="text" class="form-control" id="usuario" placeholder="nomeusuario">
+        </div>
+      </div>
+
+      <div class="col-12">
+        <label for="mensagem" class="form-label">Mensagem</label>
+        <textarea class="form-control" id="mensagem" rows="3" placeholder="Escreva aqui..."></textarea>
+      </div>
+
+      <div class="col-12">
+        <label for="curriculo" class="form-label">Upload de Currículo (PDF)</label>
+        <input class="form-control" type="file" id="curriculo" accept="application/pdf">
+        <div class="form-text">Máx. 5MB. Apenas PDF.</div>
+      </div>
+
+      <div class="col-12">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="novidades">
+          <label class="form-check-label" for="novidades">Quero receber novidades</label>
+        </div>
+        <div class="form-check form-check-inline mt-2">
+          <input class="form-check-input" type="radio" name="contato" id="contatoEmail" checked>
+          <label class="form-check-label" for="contatoEmail">Contato por email</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="contato" id="contatoTelefone">
+          <label class="form-check-label" for="contatoTelefone">Contato por telefone</label>
+        </div>
+      </div>
+
+      <div class="col-12 mt-2">
+        <button type="submit" class="btn btn-primary">Enviar</button>
+        <button type="reset" class="btn btn-outline-secondary">Limpar</button>
+      </div>
+
+    </div>
+  </form>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
