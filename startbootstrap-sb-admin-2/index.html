@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="description" content="Sistema de cadastro de animais perdidos">
+    <meta name="author" content="Animais Perdidos">
+
+    <title>Animais Perdidos - Cadastro</title>
+
+    <!-- Fontes -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- CSS principal -->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+</head>
+
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+
+        <!-- ========================================================= -->
+        <!-- SIDEBAR -->
+        <!-- ========================================================= -->
+
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
+            id="accordionSidebar">
+
+            <!-- LOGO CEUB -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+
+                <div class="sidebar-brand-icon">
+
+                    <img
+                        src="https://institucional.uniceub.br/hubfs/BrandCenter/img/logo-ceub-assinatura-conceito-centralizado-01.png"
+                        width="100"
+                        height="80"
+                    >
+
+                </div>
+
+            </a>
+
+
+            <hr class="sidebar-divider my-0">
+
+
+            <!-- Dashboard -->
+            <li class="nav-item active">
+
+                <a class="nav-link" href="#">
+
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+
+                    <span>Dashboard</span>
+
+                </a>
+
+            </li>
+
+
+            <hr class="sidebar-divider">
+
+
+            <!-- MENU ANIMAIS -->
+            <div class="sidebar-heading">
+                Animais
+            </div>
+
+
+            <li class="nav-item">
+
+                <a class="nav-link collapsed"
+                   href="#"
+                   data-toggle="collapse"
+                   data-target="#collapseAnimais"
+                   aria-expanded="true"
+                   aria-controls="collapseAnimais">
+
+                    <i class="fas fa-fw fa-paw"></i>
+
+                    <span>Animais</span>
+
+                </a>
+
+
+                <div id="collapseAnimais"
+                     class="collapse"
+                     aria-labelledby="headingAnimais"
+                     data-parent="#accordionSidebar">
+
+                    <div class="bg-white py-2 collapse-inner rounded">
+
+                        <h6 class="collapse-header">
+                            Gerenciar animais:
+                        </h6>
+
+                        <a class="collapse-item" href="tables.html">
+                            Animais perdidos
+                        </a>
+
+                        <a class="collapse-item" href="#">
+                            Animais encontrados
+                        </a>
+
+                        <a class="collapse-item" href="#">
+                            Cadastrar animal
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </li>
+
+
+            <!-- LOCALIZAÇÕES -->
+            <li class="nav-item">
+
+                <a class="nav-link collapsed"
+                   href="#"
+                   data-toggle="collapse"
+                   data-target="#collapseLocalizacoes"
+                   aria-expanded="true"
+                   aria-controls="collapseLocalizacoes">
+
+                    <i class="fas fa-fw fa-map-marker-alt"></i>
+
+                    <span>Localizações</span>
+
+                </a>
+
+
+                <div id="collapseLocalizacoes"
+                     class="collapse"
+                     aria-labelledby="headingLocalizacoes"
+                     data-parent="#accordionSidebar">
+
+                    <div class="bg-white py-2 collapse-inner rounded">
+
+                        <h6 class="collapse-header">
+                            Localização:
+                        </h6>
+
+                        <a class="collapse-item" href="#">
+                            Mapa de animais
+                        </a>
+
+                        <a class="collapse-item" href="#">
+                            Ocorrências próximas
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </li>
+
+
+            <!-- CONTATOS -->
+            <li class="nav-item">
+
+                <a class="nav-link" href="#">
+
+                    <i class="fas fa-fw fa-phone"></i>
+
+                    <span>Contatos</span>
+
+                </a>
+
+            </li>
+
+
+            <hr class="sidebar-divider">
+
+
+            <!-- Informações -->
+            <div class="sidebar-heading">
+                Sistema
+            </div>
+
+
+            <li class="nav-item">
+
+                <a class="nav-link" href="#">
+
+                    <i class="fas fa-fw fa-info-circle"></i>
+
+                    <span>Sobre o sistema</span>
+
+                </a>
+
+            </li>
+
+        </ul>
+
+
+        <!-- ========================================================= -->
+        <!-- END SIDEBAR -->
+        <!-- ========================================================= -->
+
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+
+            <!-- Main Content -->
+            <div id="content">
+
+
+                <!-- ========================================================= -->
+                <!-- TOPBAR -->
+                <!-- ========================================================= -->
+
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+
+                    <!-- Mobile Sidebar Toggle -->
+                    <button id="sidebarToggleTop"
+                            class="btn btn-link d-md-none rounded-circle mr-3">
+
+                        <i class="fa fa-bars"></i>
+
+                    </button>
+
+
+                    <!-- Search -->
+                    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+
+                        <div class="input-group">
+
+                            <input
+                                type="text"
+                                class="form-control bg-light border-0 small"
+                                placeholder="Buscar animal..."
+                                aria-label="Buscar"
+                                aria-describedby="basic-addon2"
+                            >
+
+                            <div class="input-group-append">
+
+                                <button class="btn btn-primary" type="button">
+
+                                    <i class="fas fa-search fa-sm"></i>
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </form>
+
+
+                    <!-- User -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <li class="nav-item dropdown no-arrow">
+
+                            <a class="nav-link dropdown-toggle"
+                               href="#"
+                               id="userDropdown"
+                               role="button"
+                               data-toggle="dropdown"
+                               aria-haspopup="true"
+                               aria-expanded="false">
+
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">
+                                    Administrador
+                                </span>
+
+                                <img
+                                    class="img-profile rounded-circle"
+                                    src="img/undraw_profile.svg"
+                                >
+
+                            </a>
+
+
+                            <!-- Dropdown -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                 aria-labelledby="userDropdown">
+
+                                <a class="dropdown-item" href="#">
+
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+
+                                    Perfil
+
+                                </a>
+
+
+                                <a class="dropdown-item" href="#">
+
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+
+                                    Configurações
+
+                                </a>
+
+
+                                <div class="dropdown-divider"></div>
+
+
+                                <a class="dropdown-item"
+                                   href="#"
+                                   data-toggle="modal"
+                                   data-target="#logoutModal">
+
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+
+                                    Sair
+
+                                </a>
+
+                            </div>
+
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+
+                <!-- ========================================================= -->
+                <!-- CONTENT -->
+                <!-- ========================================================= -->
+
+                <div class="container-fluid">
+
+
+                    <!-- Título -->
+                    <div class="mb-4">
+
+                        <h1 class="h3 mb-0 text-gray-800">
+                            Cadastrar animal perdido
+                        </h1>
+
+                        <p class="text-muted mt-2">
+                            Cadastre as informações do animal para ajudar a encontrá-lo.
+                        </p>
+
+                    </div>
+
+
+                    <!-- ========================================================= -->
+                    <!-- FORMULÁRIO -->
+                    <!-- ========================================================= -->
+
+                    <div class="row">
+
+                        <div class="col-xl-12 col-lg-12">
+
+                            <div class="card shadow mb-4">
+
+                                <div class="card-header py-3">
+
+                                    <h6 class="m-0 font-weight-bold text-primary">
+
+                                        <i class="fas fa-paw mr-2"></i>
+
+                                        Informações do animal
+
+                                    </h6>
+
+                                </div>
+
+
+                                <div class="card-body">
+
+
+                                    <form
+                                        action="#"
+                                        method="post"
+                                        enctype="multipart/form-data"
+                                    >
+
+
+                                        <!-- ================================================= -->
+                                        <!-- DADOS DO ANIMAL -->
+                                        <!-- ================================================= -->
+
+                                        <h5 class="text-primary mb-3">
+                                            Dados do animal
+                                        </h5>
+
+
+                                        <div class="row">
+
+
+                                            <!-- Nome -->
+                                            <div class="col-12 col-md-6 mb-3">
+
+                                                <label class="form-label" for="nome_animal">
+
+                                                    Nome do animal
+                                                    <span class="text-danger">*</span>
+
+                                                </label>
+
+                                                <input
+                                                    class="form-control"
+                                                    id="nome_animal"
+                                                    name="nome_animal"
+                                                    type="text"
+                                                    placeholder="Ex.: Thor"
+                                                    required
+                                                >
+
+                                            </div>
+
+
+                                            <!-- Espécie -->
+                                            <div class="col-12 col-md-6 mb-3">
+
+                                                <label class="form-label" for="especie">
+
+                                                    Espécie
+                                                    <span class="text-danger">*</span>
+
+                                                </label>
+
+                                                <select
+                                                    class="form-control"
+                                                    id="especie"
+                                                    name="especie"
+                                                    required
+                                                >
+
+                                                    <option value="" selected>
+                                                        Escolha...
+                                                    </option>
+
+                                                    <option value="cachorro">
+                                                        Cachorro
+                                                    </option>
+
+                                                    <option value="gato">
+                                                        Gato
+                                                    </option>
+
+                                                    <option value="ave">
+                                                        Ave
+                                                    </option>
+
+                                                    <option value="outro">
+                                                        Outro
+                                                    </option>
+
+                                                </select>
+
+                                            </div>
+
+
+                                            <!-- Raça -->
+                                            <div class="col-12 col-md-6 mb-3">
+
+                                                <label class="form-label" for="raca">
+                                                    Raça
+                                                </label>
+
+                                                <input
+                                                    class="form-control"
+                                                    id="raca"
+                                                    name="raca"
+                                                    type="text"
+                                                    placeholder="Ex.: Golden Retriever"
+                                                >
+
+                                            </div>
+
+
+                                            <!-- Sexo -->
+                                            <div class="col-12 col-md-6 mb-3">
+
+                                                <label class="form-label" for="sexo">
+                                                    Sexo
+                                                </label>
+
+                                                <select
+                                                    class="form-control"
+                                                    id="sexo"
+                                                    name="sexo"
+                                                >
+
+                                                    <option value="" selected>
+                                                        Escolha...
+                                                    </option>
+
+                                                    <option value="macho">
+                                                        Macho
+                                                    </option>
+
+                                                    <option value="femea">
+                                                        Fêmea
+                                                    </option>
+
+                                                    <option value="nao_informado">
+                                                        Não informado
+                                                    </option>
+
+                                                </select>
+
+                                            </div>
+
+
+                                            <!-- Cor -->
+                                            <div class="col-12 col-md-6 mb-3">
+
+                                                <label class="form-label" for="cor">
+
+                                                    Cor / características
+                                                    <span class="text-danger">*</span>
+
+                                                </label>
+
+                                                <input
+                                                    class="form-control"
+                                                    id="cor"
+                                                    name="cor"
+                                                    type="text"
+                                                    placeholder="Ex.: Branco com manchas pretas"
+                                                    required
+                                                >
+
+                                            </div>
+
+
+                                            <!-- Idade -->
+                                            <div class="col-12 col-md-6 mb-3">
+
+                                                <label class="form-label" for="idade">
+                                                    Idade aproximada
+                                                </label>
+
+                                                <input
+                                                    class="form-control"
+                                                    id="idade"
+                                                    name="idade"
+                                                    type="text"
+                                                    placeholder="Ex.: 3 anos"
+                                                >
+
+                                            </div>
+
+
+                                            <!-- Porte -->
+                                            <div class="col-12 col-md-6 mb-3">
+
+                                                <label class="form-label" for="porte">
+                                                    Porte
+                                                </label>
+
+                                                <select
+                                                    class="form-control"
+                                                    id="porte"
+                                                    name="porte"
+                                                >
+
+                                                    <option value="" selected>
+                                                        Escolha...
+                                                    </option>
+
+                                                    <option value="pequeno">
+                                                        Pequeno
+                                                    </option>
+
+                                                    <option value="medio">
+                                                        Médio
+                                                    </option>
+
+                                                    <option value="grande">
+                                                        Grande
+                                                    </option>
+
+                                                    <option value="nao_informado">
+                                                        Não informado
+                                                    </option>
+
+                                                </select>
+
+                                            </div>
+
+
+                                            <!-- Coleira -->
+                                            <div class="col-12 col-md-6 mb-3">
+
+                                                <label class="form-label" for="coleira">
+                                                    Usava coleira?
+                                                </label>
+
+                                                <select
+                                                    class="form-control"
+                                                    id="coleira"
+                                                    name="coleira"
+                                                >
+
+                                                    <option value="" selected>
+                                                        Escolha...
+                                                    </option>
+
+                                                    <option value="sim">
+                                                        Sim
+                                                    </option>
+
+                                                    <option value="nao">
+                                                        Não
+                                                    </option>
+
+                                                    <option value="nao_sei">
+                                                        Não sei
+                                                    </option>
+
+                                                </select>
+
+                                            </div>
+
+                                        </div>
+
+
+                                        <hr>
+
+
+                                        <!-- ================================================= -->
+                                        <!-- DESAPARECIMENTO -->
+                                        <!-- ================================================= -->
+
+                                        <h5 class="text-primary mb-3">
+
+                                            <i class="fas fa-map-marker-alt mr-2"></i>
+
+                                            Informações do desaparecimento
+
+                                        </h5>
+
+
+                                        <div class="row">
+
+
+                                            <!-- Data -->
+                                            <div class="col-12 col-md-6 mb-3">
+
+                                                <label class="form-label" for="data_desaparecimento">
+
+                                                    Data do desaparecimento
+                                                    <span class="text-danger">*</span>
+
+                                                </label>
+
+                                                <input
+                                                    class="form-control"
+                                                    id="data_desaparecimento"
+                                                    name="data_desaparecimento"
+                                                    type="date"
+                                                    required
+                                                >
+
+                                            </div>
+
+
+                                            <!-- Horário -->
+                                            <div class="col-12 col-md-6 mb-3">
+
+                                                <label class="form-label" for="horario">
+
+                                                    Horário aproximado
+
+                                                </label>
+
+                                                <input
+                                                    class="form-control"
+                                                    id="horario"
+                                                    name="horario"
+                                                    type="time"
+                                                >
+
+                                            </div>
+
+
+                                            <!-- Local -->
+                                            <div class="col-12 col-md-6 mb-3">
+
+                                                <label class="form-label" for="local">
+
+                                                    Local onde desapareceu
+                                                    <span class="text-danger">*</span>
+
+                                                </label>
+
+                                                <input
+                                                    class="form-control"
+                                                    id="local"
+                                                    name="local"
+                                                    type="text"
+                                                    placeholder="Ex.: Asa Norte, Brasília - DF"
+                                                    required
+                                                >
+
+                                            </div>
+
+
+                                            <!-- Último local -->
+                                            <div class="col-12 col-md-6 mb-3">
+
+                                                <label class="form-label" for="ultimo_local">
+
+                                                    Último local onde foi visto
+
+                                                </label>
+
+                                                <input
+                                                    class="form-control"
+                                                    id="ultimo_local"
+                                                    name="ultimo_local"
+                                                    type="text"
+                                                    placeholder="Ex.: Próximo ao Parque Olhos d'Água"
+                                                >
+
+                                            </div>
+
+
+                                            <!-- Descrição -->
+                                            <div class="col-12 mb-3">
+
+                                                <label class="form-label" for="descricao">
+
+                                                    Descrição do desaparecimento
+
+                                                </label>
+
+                                                <textarea
+                                                    class="form-control"
+                                                    id="descricao"
+                                                    name="descricao"
+                                                    rows="4"
+                                                    placeholder="Conte mais detalhes sobre o desaparecimento, características do animal, objetos que ele usava, comportamento etc."
+                                                ></textarea>
+
+                                            </div>
+
+                                        </div>
+
+
+                                        <hr>
+
+
+                                        <!-- ================================================= -->
+                                        <!-- FOTO -->
+                                        <!-- ================================================= -->
+
+                                        <h5 class="text-primary mb-3">
+
+                                            <i class="fas fa-camera mr-2"></i>
+
+                                            Foto do animal
+
+                                        </h5>
+
+
+                                        <div class="row">
+
+                                            <div class="col-12 mb-3">
+
+                                                <label class="form-label" for="foto">
+
+                                                    Foto principal
+                                                    <span class="text-danger">*</span>
+
+                                                </label>
+
+                                                <input
+                                                    class="form-control"
+                                                    id="foto"
+                                                    name="foto"
+                                                    type="file"
+                                                    accept="image/jpeg,image/png,image/webp"
+                                                    required
+                                                >
+
+                                                <small class="form-text text-muted">
+
+                                                    Formatos aceitos: JPG, PNG ou WEBP.
+                                                    Tamanho máximo: 5MB.
+
+                                                </small>
+
+                                            </div>
+
+                                        </div>
+
+
+                                        <hr>
+
+
+                                        <!-- ================================================= -->
+                                        <!-- CONTATO -->
+                                        <!-- ================================================= -->
+
+                                        <h5 class="text-primary mb-3">
+
+                                            <i class="fas fa-user mr-2"></i>
+
+                                            Dados do responsável
+
+                                        </h5>
+
+
+                                        <div class="row">
+
+
+                                            <!-- Responsável -->
+                                            <div class="col-12 col-md-6 mb-3">
+
+                                                <label class="form-label" for="responsavel">
+
+                                                    Nome do responsável
+                                                    <span class="text-danger">*</span>
+
+                                                </label>
+
+                                                <input
+                                                    class="form-control"
+                                                    id="responsavel"
+                                                    name="responsavel"
+                                                    type="text"
+                                                    placeholder="Seu nome"
+                                                    required
+                                                >
+
+                                            </div>
+
+
+                                            <!-- Telefone -->
+                                            <div class="col-12 col-md-6 mb-3">
+
+                                                <label class="form-label" for="telefone">
+
+                                                    Telefone / WhatsApp
+                                                    <span class="text-danger">*</span>
+
+                                                </label>
+
+                                                <input
+                                                    class="form-control"
+                                                    id="telefone"
+                                                    name="telefone"
+                                                    type="tel"
+                                                    placeholder="(61) 99999-9999"
+                                                    required
+                                                >
+
+                                            </div>
+
+
+                                            <!-- Email -->
+                                            <div class="col-12 mb-3">
+
+                                                <label class="form-label" for="email">
+
+                                                    E-mail
+
+                                                </label>
+
+                                                <input
+                                                    class="form-control"
+                                                    id="email"
+                                                    name="email"
+                                                    type="email"
+                                                    placeholder="nome@exemplo.com"
+                                                >
+
+                                            </div>
+
+                                        </div>
+
+
+                                        <!-- ================================================= -->
+                                        <!-- BOTÕES -->
+                                        <!-- ================================================= -->
+
+                                        <div class="d-flex flex-wrap gap-2 mt-4">
+
+                                            <button
+                                                class="btn btn-primary"
+                                                type="submit"
+                                            >
+
+                                                <i class="fas fa-paw mr-1"></i>
+
+                                                Cadastrar animal
+
+                                            </button>
+
+
+                                            <button
+                                                class="btn btn-outline-secondary"
+                                                type="reset"
+                                            >
+
+                                                <i class="fas fa-eraser mr-1"></i>
+
+                                                Limpar
+
+                                            </button>
+
+                                        </div>
+
+
+                                    </form>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+            <!-- ========================================================= -->
+            <!-- FOOTER -->
+            <!-- ========================================================= -->
+
+            <footer class="sticky-footer bg-white">
+
+                <div class="container my-auto">
+
+                    <div class="copyright text-center my-auto">
+
+                        <span>
+                            Copyright &copy; Animais Perdidos 2026
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </footer>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================================= -->
+    <!-- SCROLL TO TOP -->
+    <!-- ========================================================= -->
+
+    <a class="scroll-to-top rounded" href="#page-top">
+
+        <i class="fas fa-angle-up"></i>
+
+    </a>
+
+
+    <!-- ========================================================= -->
+    <!-- LOGOUT MODAL -->
+    <!-- ========================================================= -->
+
+    <div
+        class="modal fade"
+        id="logoutModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="logoutModalLabel"
+        aria-hidden="true"
+    >
+
+        <div class="modal-dialog" role="document">
+
+            <div class="modal-content">
+
+
+                <div class="modal-header">
+
+                    <h5 class="modal-title" id="logoutModalLabel">
+
+                        Sair do sistema
+
+                    </h5>
+
+
+                    <button
+                        class="close"
+                        type="button"
+                        data-dismiss="modal"
+                        aria-label="Fechar"
+                    >
+
+                        <span aria-hidden="true">
+                            ×
+                        </span>
+
+                    </button>
+
+                </div>
+
+
+                <div class="modal-body">
+
+                    Deseja realmente sair do sistema?
+
+                </div>
+
+
+                <div class="modal-footer">
+
+                    <button
+                        class="btn btn-secondary"
+                        type="button"
+                        data-dismiss="modal"
+                    >
+
+                        Cancelar
+
+                    </button>
+
+
+                    <a class="btn btn-primary" href="#">
+
+                        Sair
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================================= -->
+    <!-- JAVASCRIPT -->
+    <!-- ========================================================= -->
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+
+</html>
